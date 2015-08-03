@@ -1,0 +1,29 @@
+
+<h1>Listing Books</h1>
+
+<table id="book-table" class="table table-striped">
+  <thead>
+    <tr>
+      <th>Isbn</th>
+      <th id="sort-name" class="sortable">Name<span class="icon"><i id="sort-name-asc" class="fa fa-sort-asc"></i><i id="sort-name-desc" class="fa fa-sort-desc" style="display:none"></i></span></th>
+      <th>Occupied</th>
+      <% if @_current_user.admin %>
+      <th colspan="3"></th>
+      <% end %>
+    </tr>
+  </thead>
+
+  <tbody id="book-list">
+    
+  </tbody>
+</table>
+
+
+<script type="text/template" id="item-template">
+		<td>{{isbn}}</td>
+        <td>{{name}}</td>
+        <td>{{occupied}}</td>
+        <% if @_current_user.admin %>
+        <td><button type="button" class="btn btn-default occupiedBy">occupy</button> <button type="button" class="btn btn-default returnBy">return</button></td>
+        <% end %>
+</script>

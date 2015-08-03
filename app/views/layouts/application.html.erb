@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Booksapp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-right">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      Signed in as <%=@_current_user.name%>
+      <button type="button" class="btn btn-default navbar-btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Switch Account</button>
+      <ul class="dropdown-menu" aria-labelledby="dLabel">
+        <% @users.each do |user| %>
+        <li><%=link_to user.name, :id => user.id, :controller => :users, :action => :switchAccount %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<%= yield %>
+
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+</body>
+</html>
