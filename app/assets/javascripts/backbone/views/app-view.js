@@ -26,12 +26,13 @@ var app = app || {};
 			this.listenTo(app.books, 'reset', this.addAll);
 			
 			this.isSortByAsc = true;
+			this.addAll();
+			$('.dropdown-toggle').dropdown(); // this is for fixing bug of bootstrap dropdownlist, it doesn't work after refresh the page.
 		},
 
 		// Re-rendering the App just means refreshing the statistics -- the rest
 		// of the app doesn't change.
 		render: function () {
-			// this.$sortNameDesc.hide();
 			
 		},
 

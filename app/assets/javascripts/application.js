@@ -31,7 +31,6 @@ $(function () {
 	
 	// kick things off by creating the `App`
 	var view = new app.AppView();
-	view.addAll();
+	//view.addAll();
 	
-	$('.dropdown-toggle').dropdown()
 });
